@@ -49,4 +49,9 @@ public class Task implements Runnable {
         return matrizR;
     }
 
+    public int[][] getMatrizA() {
+        return matrizA;
+    }
+    
+
 }
