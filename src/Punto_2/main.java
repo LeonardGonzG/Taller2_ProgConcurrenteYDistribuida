@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Punto_2;
+
 
 /**
  *
@@ -11,11 +7,29 @@ package Punto_2;
  */
 public class main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        MyThread[] tasks= new MyThread[6];
+        
+        tasks[0] = new MyThread(1, "A");
+        tasks[1] = new MyThread(2, "B");
+        tasks[2] = new MyThread(3, "C");
+        tasks[3] = new MyThread(4, "D");
+        tasks[4] = new MyThread(5, "E");
+        tasks[5] = new MyThread(6, "F");
+        
+        for (int i = 0; i < tasks.length; i++) {
+            tasks[i].start();
+        }
+        
+        for (MyThread task : tasks) {
+            try {
+                task.getTheThread().join();
+            } catch (InterruptedException ex) {
+                System.out.println(":(");
+            }
+        }
+        
     }
     
 }
