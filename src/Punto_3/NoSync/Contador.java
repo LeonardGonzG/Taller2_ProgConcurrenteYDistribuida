@@ -3,19 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Punto_3;
+package Punto_3.NoSync;
 
 /**
  *
  * @author Leonardo González G.
  */
-public class main {
+public class Contador {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    private int cont = 0;
+
+    public Contador() {
     }
-    
+
+    public void sumar() {
+        if (this.cont <= 5000) {
+
+            cont++;
+            System.out.println(cont);
+        }
+
+    }
+
 }
